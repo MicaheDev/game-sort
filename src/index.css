@@ -1,0 +1,160 @@
+*,
+*::before,
+::after {
+  --yellow: #fbbf24;
+  --white: #fff;
+  --black: #000;
+
+  --fs-normal: 1.2em;
+  --fs-subtitle: 1.5em;
+  --fs-title: 2em;
+  --fs-display-name: 4em;
+
+  --fs-mb-normal: 0.8em;
+  --fs-mb-subtitle: 1em;
+  --fs-mb-title: 1.5em;
+  --fs-mb-display-name: 2em;
+
+  --fw-bolder: bolder;
+  --fw-normal: normal;
+
+  --shadow-btn: 8px 8px 0px 0px rgba(0, 0, 0, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  background: url("./../public/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--overlay-bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  color: var(--white);
+  gap: 20px;
+  font-weight: var(--fw-bolder);
+  position: relative;
+
+  .menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .slot-container {
+    width: 60%;
+    height: 200px;
+    background-color: var(--yellow);
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-btn);
+
+    @media screen and (max-width: 1000px) {
+      width: 95%;
+      height: 150px;
+    }
+
+    .slot-border {
+      width: 100%;
+      height: 100%;
+      background-color: var(--yellow);
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 8px dashed var(--white);
+
+
+    @media screen and (max-width: 1000px) {
+      border-width: 4px;
+    }
+
+      .slot {
+        background-color: var(--white);
+        border-radius: 15px;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+
+        @media screen and (max-width: 1000px) {
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .sort-btn {
+      background-color: var(--yellow);
+      color: var(--white);
+      font-size: var(--fs-subtitle);
+      border-radius: 10px;
+      border: none;
+      padding: 20px 40px;
+      font-weight: bolder;
+      cursor: pointer;
+      box-shadow: var(--shadow-btn);
+      transition: opacity 150ms ease-in-out;
+
+      @media screen and (max-width: 1000px) {
+        font-size: var(--fs-mb-subtitle);
+        padding: 15px 30px;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &.disabled {
+        opacity: 0.4;
+      }
+    }
+  }
+}
+
+ul {
+  color: var(--white);
+}

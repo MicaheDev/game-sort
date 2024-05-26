@@ -1,0 +1,44 @@
+.gameRandomName {
+  font-size: var(--fs-display-name);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 15px;
+  background-color: var(--white);
+  box-shadow: inset 10px 10px 0px 0px #d0d0d0;
+
+
+  @media screen and (max-width: 1000px) {
+    font-size: var(--fs-mb-display-name);
+  }
+}
+
+.nameContainerOffset {
+  position: relative;
+  /*transform: translateY(-100%);*/
+}
+
+.nameContainer {
+  opacity: 0;
+}
+
+.nameContainer > div {
+  padding: 0.6em 0;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 10px;
+
+
+  @media screen and (max-width: 1000px) {
+   padding: 0.9em 0;
+  }
+}
+
+/*
+.winner {
+  text-shadow: 4px 4px 0px var(--yellow);
+}
+*/

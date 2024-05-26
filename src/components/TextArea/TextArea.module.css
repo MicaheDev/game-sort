@@ -1,0 +1,80 @@
+.textAreaContainer {
+  box-sizing: border-box;
+  padding: 2px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+
+  @media screen and (max-width: 1000px) {
+    gap: 20px;
+  }
+}
+
+.textArea {
+  padding: 10px;
+  width: 400px;
+  height: 300px;
+  font-size: var(--fs-subtitle);
+  overflow: auto;
+  resize: none;
+  border-radius: 10px;
+  box-shadow: inset 5px 5px 40px 10px rgba(0, 0, 0, 0.05);
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.textAreaLabel {
+  color: var(--black);
+  font-weight: var(--fw-bolder);
+  font-size: var(--fs-subtitle);
+
+  @media screen and (max-width: 1000px) {
+    font-size: var(--fs-mb-subtitle);
+  }
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 400px;
+
+  @media screen and (max-width: 1000px) {
+    gap: 5px;
+    width: 100%;
+  }
+}
+
+.btn {
+  background-color: var(--yellow);
+  color: var(--white);
+  font-size: var(--fs-subtitle);
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 15px;
+  font-weight: var(--fw-bolder);
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: opacity 150ms ease-in-out;
+
+  @media screen and (max-width: 1000px) {
+    font-size: var(--fs-mb-subtitle);
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+  }
+}
