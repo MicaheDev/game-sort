@@ -82,7 +82,9 @@ export function GameRandomName({
 
       <img
         className={`winner-decoration ${showConfetti ? "show" : ""}`}
-        src="./../public/sunburst.svg"
+        width={700}
+        height={700}
+        src="./../public/sunburst.png"
         alt=""
       />
 
