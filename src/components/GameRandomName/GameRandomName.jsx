@@ -56,7 +56,7 @@ export function GameRandomName({
   function renderConfetti() {
     setTimeout(() => {
       setShowConfetti(true);
-    }, (transitionDuration / 2) * 1000);
+    }, (transitionDuration - 2 ) * 1000);
   }
 
   return (
