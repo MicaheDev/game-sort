@@ -68,7 +68,7 @@ function FileInput({ setNames, selectedFileName, setSelectedFileName }) {
     <form>
       <div className={classNames(styles.fileSelectorContainer)}>
         <label className={classNames(styles.fileHelpLabel)} htmlFor="FileInput">
-          Carga un archivo exel por favor
+          Por favor, carga un archivo de Excel.
         </label>
         <input
           ref={fileInputRef}
@@ -83,13 +83,13 @@ function FileInput({ setNames, selectedFileName, setSelectedFileName }) {
           className={classNames(styles.fileSelectorLabel)}
           htmlFor="FileInput"
         >
-          Seleccionar Archivo
+          Seleccionar archivo
         </label>
 
         <span className={classNames(styles.fileSelectedName)}>
           {selectedFileName
             ? selectedFileName
-            : "No se ha seleccionado ningun archivo"}
+            : "No se ha seleccionado ningún archivo."}
         </span>
       </div>
     </form>

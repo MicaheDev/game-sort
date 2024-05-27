@@ -19,8 +19,7 @@ function Menu({ names, setNames, isShowMenu, setIsShowMenu }) {
         <h1 className={classNames(styles.title)}>Configuración</h1>
         <div className={classNames(styles.formGroup)}>
           <p className={classNames(styles.helpText)}>
-            Rellena la lista mediante un archvio Exel o completala de forma
-            manual
+            Completa la lista mediante un archivo de Excel o de forma manual.
           </p>
 
           <FileInput
@@ -37,7 +36,7 @@ function Menu({ names, setNames, isShowMenu, setIsShowMenu }) {
         </div>
       </menu>
       <div
-      onClick={() => setIsShowMenu(false)}
+        onClick={() => setIsShowMenu(false)}
         className={classNames(
           styles.overlay,
           !isShowMenu ? styles.collapsed : styles.expanded

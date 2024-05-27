@@ -42,7 +42,7 @@ function TextArea({ names, setNames, setIsShowMenu, setSelectedFileName }) {
             className={classNames(styles.textAreaLabel)}
             htmlFor="TextArea"
           >
-            Completa la lista de forma manual
+            Completa la lista manualmente
           </label>
           <textarea
             onChange={(e) => handleTextArea(e)}

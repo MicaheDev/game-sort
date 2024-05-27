@@ -28,8 +28,6 @@ export default function Home() {
     }
   }
 
-
-
   return (
     <div className="bg-overlay">
       <Menu
@@ -55,15 +53,19 @@ export default function Home() {
           </div>
         </div>
 
-        {names.length > 0 ? (
-          <p>Lista cargada</p>
-        ) : (
-          <p>
-            No se han cargado participantes.
-            <br />
-            <strong>Carga un archivo de Exel para comenzar</strong>
-          </p>
-        )}
+        <div style={{ textAlign: "center" }}>
+          {names.length > 0 ? (
+            <p>Lista de participantes cargada</p>
+          ) : (
+            <p>
+              No se han cargado participantes.
+              <br />
+              <strong>
+                Por favor, carga un archivo de Excel para comenzar.
+              </strong>
+            </p>
+          )}
+        </div>
 
         <div className="btn-group">
           <button

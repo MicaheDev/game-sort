@@ -85,7 +85,10 @@ export function GameRandomName({
         src="./../public/sunburst.svg"
         alt=""
       />
-      {showConfetti && <Confetti />}
+
+      <div className={`confetti ${showConfetti ? "show" : ""}`}>
+        <Confetti />
+      </div>
     </>
   );
 }

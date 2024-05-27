@@ -169,10 +169,23 @@ ul {
   opacity: 0;
   z-index: -1;
   animation: rotate 5s infinite linear;
-  transition: opacity 1s ease-in-out;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
 }
 
 .winner-decoration.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.confetti{
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+
+.confetti.show{
+  visibility: visible;
   opacity: 1;
 }
 
