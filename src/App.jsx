@@ -1,16 +1,15 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MemoizedGameRandomName from "./components/GameRandomName/GameRandomName";
 import Menu from "./components/Menu/Menu";
 import SettingIcon from "./components/SettingIcon/SettingIcon";
-import CloseIcon from "./components//CloseIcon/CloseIcon";
+import CloseIcon from "./components/CloseIcon/CloseIcon";
 
 export default function Home() {
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [showWinner, setShowWinner] = useState(false);
   const [names, setNames] = useState([]);
 
-
-  function getLocalStorageState(){
+  function getLocalStorageState() {
     const storedNames = localStorage.getItem("names");
     if (storedNames) {
       setNames(JSON.parse(storedNames));
@@ -18,8 +17,8 @@ export default function Home() {
   }
 
   useEffect(() => {
-    getLocalStorageState()
-  }, [])
+    getLocalStorageState();
+  }, []);
 
   function spin() {
     if (names.length === 0) {
@@ -29,6 +28,8 @@ export default function Home() {
     }
   }
 
+
+
   return (
     <div className="bg-overlay">
       <Menu
@@ -37,7 +38,6 @@ export default function Home() {
         names={names}
         setNames={setNames}
       />
-
       <main className="main-container">
         <button className="menu-btn" onClick={() => setIsShowMenu(!isShowMenu)}>
           {!isShowMenu ? <SettingIcon /> : <CloseIcon />}

@@ -8,7 +8,6 @@
   background-color: var(--white);
   box-shadow: inset 10px 10px 0px 0px #d0d0d0;
 
-
   @media screen and (max-width: 1000px) {
     font-size: var(--fs-mb-display-name);
   }
@@ -31,9 +30,8 @@
   white-space: nowrap;
   border-radius: 10px;
 
-
   @media screen and (max-width: 1000px) {
-   padding: 0.9em 0;
+    padding: 0.9em 0;
   }
 }
 

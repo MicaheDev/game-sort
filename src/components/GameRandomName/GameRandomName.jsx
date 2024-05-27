@@ -25,7 +25,6 @@ export function GameRandomName({
       if (names.length > 1) {
         setNames(newList);
         localStorage.setItem("names", JSON.stringify(newList));
-
       }
       renderConfetti();
 
@@ -70,14 +69,23 @@ export function GameRandomName({
         <div className={style.nameContainerOffset}>
           <div className={style.nameContainer} style={getNameContainerStyles()}>
             {[getWinner, names[names.length - 1], ...names].map((n, i) => (
-              <div key={i + n} className={i === 0 ? style.winner : undefined}>
+              <div
+                key={i + n + `n-${i}`}
+                className={i === 0 ? style.winner : undefined}
+              >
                 {n}
               </div>
             ))}
           </div>
         </div>
       </div>
-      {showConfetti ? <Confetti /> : ""}
+
+      <img
+        className={`winner-decoration ${showConfetti ? "show" : ""}`}
+        src="./../public/sunburst.svg"
+        alt=""
+      />
+      {showConfetti && <Confetti />}
     </>
   );
 }
