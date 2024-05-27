@@ -4,6 +4,7 @@ import classNames from "classnames";
 import style from "./GameRandomName.module.css";
 import PropTypes from "prop-types";
 import Confetti from "react-confetti";
+import ImgUrl from "./../../assets/sunburst.png"
 
 export function GameRandomName({
   names,
@@ -84,7 +85,7 @@ export function GameRandomName({
         className={`winner-decoration ${showConfetti ? "show" : ""}`}
         width={700}
         height={700}
-        src="./../public/sunburst.png"
+        src={ImgUrl}
         alt=""
       />
 
