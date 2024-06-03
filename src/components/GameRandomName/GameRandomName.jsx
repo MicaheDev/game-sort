@@ -11,6 +11,7 @@ export function GameRandomName({
   setNames,
   showWinner,
   transitionDuration,
+  setAnimationIsComplete
 }) {
   const [showConfetti, setShowConfetti] = useState(false);
 
@@ -56,6 +57,7 @@ export function GameRandomName({
   function renderConfetti() {
     setTimeout(() => {
       setShowConfetti(true);
+      setAnimationIsComplete(true)
     }, (transitionDuration - 2 ) * 1000);
   }
 
@@ -101,6 +103,7 @@ GameRandomName.propTypes = {
   setNames: PropTypes.func.isRequired,
   showWinner: PropTypes.bool.isRequired,
   transitionDuration: PropTypes.number.isRequired,
+  setAnimationIsComplete: PropTypes.func.isRequired
 };
 
 const MemoizedGameRandomName = memo(GameRandomName);

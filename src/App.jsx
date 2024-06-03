@@ -8,6 +8,8 @@ export default function Home() {
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [showWinner, setShowWinner] = useState(false);
   const [names, setNames] = useState([]);
+  const [counter, setCounter] = useState(0);
+  const [animationIsComplete, setAnimationIsComplete] = useState(false)
 
   function getLocalStorageState() {
     const storedNames = localStorage.getItem("names");
@@ -24,8 +26,19 @@ export default function Home() {
     if (names.length === 0) {
       setIsShowMenu(true);
     } else {
+      setAnimationIsComplete(false)
       setShowWinner(true);
+      setCounter(counter + 1);
     }
+  }
+
+  function spinAgain() {
+    setShowWinner(false);
+    setAnimationIsComplete(false)
+
+    setTimeout(() => {
+      setShowWinner(true);
+    }, 100);
   }
 
   return (
@@ -48,6 +61,7 @@ export default function Home() {
                 setNames={setNames}
                 showWinner={showWinner}
                 transitionDuration={8}
+                setAnimationIsComplete={setAnimationIsComplete}
               />
             </div>
           </div>
@@ -68,18 +82,20 @@ export default function Home() {
         </div>
 
         <div className="btn-group">
-          <button
-            className={`sort-btn ${showWinner ? "disabled" : ""}`}
-            onClick={spin}
-          >
-            Girar
-          </button>
-          <button
-            className={`sort-btn ${!showWinner ? "disabled" : ""}`}
-            onClick={() => setShowWinner(false)}
-          >
-            Reiniciar
-          </button>
+          {counter >= 1 ? (
+            <button
+            className={`sort-btn ${!animationIsComplete ? "disabled" : ""}`}
+            disabled={!animationIsComplete}
+
+              onClick={spinAgain}
+            >
+              Sortear de nuevo
+            </button>
+          ) : (
+            <button className="sort-btn" onClick={spin}>
+              Sortear
+            </button>
+          )}
         </div>
       </main>
     </div>
