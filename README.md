@@ -1,8 +1,30 @@
-# React + Vite
+# Siom Minera (App de sorteos)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Clonar Repositorio
+```bash
+git clone https://github.com/MicaheDev/game-sort
+```
 
-Currently, two official plugins are available:
+### Instalar dependencias
+```bash
+npm install
+# o
+yarn install
+# o 
+bun install
+# o 
+pnpm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Ejecutar la web app en local
+```bash
+npm run dev
+# o
+yarn dev
+# o 
+bun dev
+# o 
+pnpm dev
+```
+
+La aplicación se ejecutará en el puerto [http://localhost:5173](http://localhost:5173).
